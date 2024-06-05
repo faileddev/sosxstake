@@ -6,8 +6,8 @@ import { SUSD_STAKING_CONTRACT_ABI } from "./susdPoolContractABI";
 
 
 const sosusdtTokenContractAddress = "0x0554349dD7F50C0eAC4791eec64dDDDC109AbA98";
-const usdcTokenContractAddress = "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48";
-const susdPoolContractAddress = "0xed945F6c6951DFbc6486EE08697f182e0f7D4693";
+const usdcTokenContractAddress = "0xdac17f958d2ee523a2206206994597c13d831ec7";
+const susdPoolContractAddress = "0x549f3E5aA3F8Af74493d36f945fe3f0328A2779F";
 
 
 

@@ -11,6 +11,8 @@ import { useReadContract, useActiveAccount, TransactionButton } from "thirdweb/r
 import { useEffect, useState } from "react";
 import { prepareContractCall, toEther, toWei } from "thirdweb";
 
+
+
 export const Susdt = () => {
     const account = useActiveAccount();
 
@@ -61,6 +63,11 @@ export const Susdt = () => {
             enabled: !!account,
         }
     });
+
+    const toUnit = (value: bigint | number, decimals = 6) => {
+        const divisor = 10 ** decimals;
+        return Number(value) / divisor;
+    };
 
     function truncate(value: string | number, decimalPlaces: number): number {
         const numericValue: number = Number(value);
@@ -120,7 +127,7 @@ export const Susdt = () => {
                                 style={{fontSize: "10px",
                                     
                                 }}>
-                                    Earn 0.00001 USDC/Hr for every 1 sosUSDT you deposit.
+                                    Earn 0.00001 USDT/Hr for every 1 sosUSDT you deposit.
                                 </p>
                             </div>
                             
@@ -241,12 +248,12 @@ export const Susdt = () => {
                                             fontSize: "62px",
                                             fontWeight: "bold",
                                             
-                                        }}>{truncate(toEther(stakeInfo[1]).toString(),2)}</p>
+                                        }}>{truncate(toUnit(stakeInfo[1], 6), 2)}</p>
                                         <p style={{
                                                 marginLeft: "6px",
                                                 fontSize: "12px"
                                             }}>
-                                                USDC
+                                                USDT
                                             </p>
                                 </div>
                                 <div style={{
